@@ -22,32 +22,32 @@ To enable recruiters to create and manage interview sessions, I implemented an A
 
 5. Developed Views & Endpoints – I created API views using Django REST framework to handle interview creation and store data in PostgreSQL.
 
-6.Configured URLs – Added an interview creation endpoint to Django’s URL patterns, making it accessible via API calls.
+6. Configured URLs – Added an interview creation endpoint to Django’s URL patterns, making it accessible via API calls.
 
-Tested API – Used the Django admin panel to send POST requests and verify successful interview creation and data storage.
+7. Tested API – Used the Django admin panel to send POST requests and verify successful interview creation and data storage.
 
 ## Task 3: Fetching & Managing Interviews
 
-Core Focus: Implement API endpoints to fetch all interviews and get interview details by ID, including pagination.
+## Core Focus: Implement API endpoints to fetch all interviews and get interview details by ID, including pagination.
 
-To make the interview process more efficient, I implemented API endpoints that allow recruiters and evaluators to fetch all interviews, retrieve details of a specific interview by ID, and handle large datasets efficiently through pagination.
+## To make the interview process more efficient, I implemented API endpoints that allow recruiters and evaluators to fetch all interviews, retrieve details of a specific interview by ID, ## and handle large datasets efficiently through pagination.
 
-Steps Implemented:
+## Steps Implemented:
 
-Created Fetch Endpoints – Implemented API views to retrieve all interview records and fetch details of a specific interview by ID.
+1. Created Fetch Endpoints – Implemented API views to retrieve all interview records and fetch details of a specific interview by ID.
 
-Implemented Pagination – Added pagination support to manage large interview datasets efficiently, preventing overload and ensuring smooth API responses.
+2. Implemented Pagination – Added pagination support to manage large interview datasets efficiently, preventing overload and ensuring smooth API responses.
 
-Updated Serializer – Ensured that the retrieved interview data is properly formatted and structured for easy consumption by frontend applications.
+3. Updated Serializer – Ensured that the retrieved interview data is properly formatted and structured for easy consumption by frontend applications.
 
-Configured URLs – Added interview retrieval endpoints to Django’s URL patterns to make them accessible.
+4. Configured URLs – Added interview retrieval endpoints to Django’s URL patterns to make them accessible.
 
-Tested API – Used Postman to confirm successful retrieval of interviews, test pagination, and verify data accuracy.
+5. Tested API – Used Curl command on git bash to confirm successful retrieval of interviews by 1d, and tested for pagination
 
-Technologies Used
+## Technologies Used
 
-Django & Django REST Framework – Backend development and API implementation.
+1. Django & Django REST Framework – Backend development and API implementation.
 
-PostgreSQL – Database for storing interview data.
+2. PostgreSQL – Database for storing interview data.
 
-Postman – API testing to ensure functionality.
+3. Curl command – API testing to ensure functionality.
