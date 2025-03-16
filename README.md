@@ -31,7 +31,7 @@ To enable recruiters to create and manage interview sessions, I implemented an A
 
 ### Core Focus: Implement API endpoints to fetch all interviews and get interview details by ID, including pagination.
 
-### To make the interview process more efficient, I implemented API endpoints that allow recruiters and evaluators to fetch all interviews, retrieve details of a specific interview by ### ID, and handle large datasets efficiently through pagination.
+### To make the interview process more efficient, I implemented API endpoints that allow recruiters and evaluators to fetch all interviews, retrieve details of a specific interview by   ID, and handle large datasets efficiently through pagination.
 
 ## Steps Implemented:
 
