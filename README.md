@@ -12,7 +12,7 @@ To enable recruiters to create and manage interview sessions, I implemented an A
 
 ## Steps Implemented:
 
-  1. Setting up Django and PostgreSQL – Installed Django, Django REST framework (DRF), and PostgreSQL dependencies to set up the development environment.
+    1. Setting up Django and PostgreSQL – Installed Django, Django REST framework (DRF), and PostgreSQL dependencies to set up the development environment.
 
   2 . Activated virtual machine
 
