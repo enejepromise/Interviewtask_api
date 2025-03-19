@@ -1,7 +1,14 @@
+# interviews/views.py
 from rest_framework import generics, permissions
 from rest_framework.pagination import PageNumberPagination
-from .models import InterviewSession
-from .serializers import InterviewSessionSerializer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser, FormParser
+import cloudinary.uploader
+
+
+from .models import InterviewSession, InterviewVideo
+from .serializers import InterviewSessionSerializer, InterviewVideoSerializer, InterviewVideoListSerializer
 
 class InterviewSessionPagination(PageNumberPagination):
     """
@@ -19,6 +26,7 @@ class InterviewSessionListView(generics.ListAPIView):
     serializer_class = InterviewSessionSerializer
     pagination_class = InterviewSessionPagination
     permission_classes = [permissions.IsAuthenticatedOrReadOnly] 
+
 class InterviewSessionDetailView(generics.RetrieveAPIView):
     """
     API endpoint to retrieve details of a specific interview session by ID.
@@ -26,6 +34,7 @@ class InterviewSessionDetailView(generics.RetrieveAPIView):
     queryset = InterviewSession.objects.all()
     serializer_class = InterviewSessionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly] 
+
 class InterviewSessionCreateView(generics.CreateAPIView):
     """
     API view for creating new interview sessions.
@@ -33,3 +42,17 @@ class InterviewSessionCreateView(generics.CreateAPIView):
     queryset = InterviewSession.objects.all()
     serializer_class = InterviewSessionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+class UploadVideoView(generics.CreateAPIView):
+    queryset = InterviewVideo.objects.all()
+    serializer_class = InterviewVideoSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class ListVideosView(generics.ListAPIView):
+    """
+    API endpoint to list all interview videos.
+    """
+    queryset = InterviewVideo.objects.all()
+    serializer_class = InterviewVideoSerializer 
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly] 

@@ -1,4 +1,8 @@
 from django.db import models
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.models import CloudinaryField
 
 class InterviewSession(models.Model):
     """
@@ -24,3 +28,21 @@ class InterviewSession(models.Model):
         verbose_name = "Interview Session"
         verbose_name_plural = "Interview Sessions"
         ordering = ['-created_at'] 
+
+
+class InterviewVideo(models.Model):
+    title = models.CharField(max_length=255)  
+    video = CloudinaryField('video', resource_type="video")  # Cloudinary storage
+    video_url = models.URLField(blank=True, null=True)  
+    duration = models.FloatField(blank=True, null=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        if self.video and not self.video_url:  # Upload only if no Cloudinary URL
+            try:
+                upload_data = cloudinary.uploader.upload(self.video, resource_type="video")
+                self.video_url = upload_data['secure_url']
+                self.duration = upload_data.get('duration', 0)
+            except cloudinary.exceptions.Error as e:
+                print(f"Cloudinary upload failed: {e}")  # Log the error
+        super().save(*args, **kwargs)
