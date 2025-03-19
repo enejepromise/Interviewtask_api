@@ -52,3 +52,29 @@ To enable recruiters to create and manage interview sessions, I implemented an A
    2. PostgreSQL – Database for storing interview data.
 
    3. Curl command – API testing to ensure functionality.
+
+##Task 4
+
+### Video Upload API
+
+This project is about implementing a Video Upload API built with Django, using Cloudinary for video storage. This API allows users to upload videos and retrieve them as needed.
+
+## Features
+1. Upload videos to Cloudinary.
+2. Store video metadata (URL, duration) in the database.
+3. Fetch and manage uploaded videos via API endpoints.
+4. Secure authentication for API access.
+5. Tested API – Used Postman to check the functionality of the endpoints
+
+## Tech Stack 
+Backend: Django, Django REST Framework
+Storage: Cloudinary
+Database: PostgreSQL 
+Authentication: Token-based
+Installation & Setup
+Prerequisites
+Python 3.8+
+Django installed (pip install django djangorestframework)
+Cloudinary account & API credentials
+
+
