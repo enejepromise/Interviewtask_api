@@ -80,7 +80,7 @@ Cloudinary account & API credentials
 ### This is my live video for task 4
 https://drive.google.com/file/d/1bIk6PaMZ0f9vx1Zhl1YGMbbfHNV6vNVS/view?usp=sharing
 
-# Vector Interview App - Evaluation API
+# Task 5 - Evaluation API
 
 ## Overview  
 The **Evaluation API** is responsible for managing candidate evaluations within the Vector Interview App.
@@ -95,7 +95,7 @@ It allows evaluators to review, score, and provide feedback on candidate respons
 6.  Tested API – Used Curl command to verify endpoint functionality.  
 
 ## Technologies Used  
-- **Backend**: Node.js (Express)  
+- **Backend**: Python(Django) 
 - **Database**: PostgreSQL  
 - **Authentication**: OAuth 2.0  
 - **Security**: Data encryption, GDPR compliance  
