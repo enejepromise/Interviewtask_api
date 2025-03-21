@@ -46,3 +46,14 @@ class InterviewVideo(models.Model):
             except cloudinary.exceptions.Error as e:
                 print(f"Cloudinary upload failed: {e}")  # Log the error
         super().save(*args, **kwargs)
+
+class Evaluation(models.Model):
+    evaluator_name = models.CharField(max_length=255)
+    user_id = models.IntegerField()  
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Evaluation by {self.evaluator_name} - Score: {self.score}"
